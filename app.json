@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "First-expo",
-    "slug": "First-expo",
+    "name": "Animagine",
+    "slug": "Animagine",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/klepon.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
@@ -21,10 +21,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.appsaia.animagine"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "a051f56e-d013-42f5-bc12-15c85bf953dc"
+      }
     }
   }
 }

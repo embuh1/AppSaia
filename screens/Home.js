@@ -22,7 +22,7 @@ const Home = ({ navigation }) => {
       blurRadius={2}
     >
       <View style={styles.overlay}>
-        <Text style={styles.title}>Selamat Datang di Aplikasi Saia!</Text>
+        <Text style={styles.title}>Selamat Datang di Aplikasi Animagine!</Text>
         <TouchableOpacity style={styles.button} onPress={handleStartPress}>
           <Text style={styles.buttonText}>Mulai</Text>
         </TouchableOpacity>
