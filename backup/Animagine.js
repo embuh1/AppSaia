@@ -19,7 +19,7 @@ import * as MediaLibrary from "expo-media-library";
 
 const Animagine = () => {
   const [inputText, setInputText] = useState(
-    "1girl, green hair, sweater, looking at viewer, upper body, beanie, outdoors, night, turtleneck, masterpiece, best quality, very aesthetic, absurdes"
+    "1girl, momoi, blue archive, looking at viewer, upper body, outdoors, masterpiece, best quality, very aesthetic, absurdes"
   );
   const [imageUri, setImageUri] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -151,6 +151,7 @@ const Animagine = () => {
       <Image
         source={require("../assets/images/FB_IMG_1715090825039.jpg")}
         style={styles.backgroundImage}
+        blurRadius={2}
         resizeMode="cover"
       />
       <View style={styles.overlay}>
