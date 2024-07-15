@@ -22,7 +22,7 @@ const Home = ({ navigation }) => {
       blurRadius={2}
     >
       <View style={styles.overlay}>
-        <Text style={styles.title}>Selamat Datang di Aplikasi Animagine!</Text>
+        <Text style={styles.title}>Selamat Datang di Aplikasi Saia!</Text>
         <TouchableOpacity style={styles.button} onPress={handleStartPress}>
           <Text style={styles.buttonText}>Mulai</Text>
         </TouchableOpacity>
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
   },
   title: {
     textAlign: "center",
-    fontSize: 40,
+    fontSize: 35,
     fontWeight: "bold",
     color: "#fff", // Warna teks putih untuk kontras dengan overlay
     marginBottom: 30,

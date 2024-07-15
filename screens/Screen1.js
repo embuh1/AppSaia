@@ -17,10 +17,9 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import * as FileSystem from "expo-file-system";
 import * as MediaLibrary from "expo-media-library";
 
-
 const Animagine = () => {
   const [inputText, setInputText] = useState(
-    "1girl, momoi, blue archive, masterpiece, best quality, very aesthetic, absurdes"
+    "1girl, green hair, sweater, looking at viewer, upper body, beanie, outdoors, night, turtleneck, masterpiece, best quality, very aesthetic, absurdes"
   );
   const [imageUri, setImageUri] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -65,7 +64,7 @@ const Animagine = () => {
     try {
       await AsyncStorage.setItem("@saved_image", image);
     } catch (error) {
-      console.error("Error saving image:", error);
+      console.error("Error menyimpan gambar:", error);
     }
   };
 
@@ -76,7 +75,7 @@ const Animagine = () => {
         setImageUri(savedImage);
       }
     } catch (error) {
-      console.error("Error loading image:", error);
+      console.error("Error memuat gambar:", error);
     }
   };
 
@@ -88,7 +87,7 @@ const Animagine = () => {
       setImageUri(base64Image);
       saveImageToStorage(base64Image);
     } catch (error) {
-      console.error("Error generating image:", error);
+      console.error("Error memproses gambar:", error);
     } finally {
       setLoading(false);
     }
@@ -112,8 +111,8 @@ const Animagine = () => {
       const { status } = await MediaLibrary.requestPermissionsAsync();
       if (status !== "granted") {
         Alert.alert(
-          "Permission denied",
-          "You need to grant media library permissions to save the image."
+          "Izin Ditolak",
+          "Anda perlu memberikan izin akses library untuk menyimpan gambar."
         );
         return;
       }
@@ -121,10 +120,10 @@ const Animagine = () => {
       // Save the image to the media library
       const asset = await MediaLibrary.createAssetAsync(fileUri);
       await MediaLibrary.createAlbumAsync("Animagine", asset, false);
-      Alert.alert("Success!", "Image has been saved to your gallery.");
+      Alert.alert("Success!", "Gambar telah disimpan ke Galery.");
     } catch (error) {
-      console.error("Error downloading image:", error);
-      Alert.alert("Error", "Failed to download image");
+      console.error("Error gagal menyimpan gambar:", error);
+      Alert.alert("Error", "Gagal menyimpan gambar");
     }
   };
 
@@ -172,11 +171,13 @@ const Animagine = () => {
             {loading ? (
               <ActivityIndicator size="small" color="white" />
             ) : (
-              "Generate Gambar"
+              "KIRIM"
             )}
           </Text>
         </TouchableOpacity>
-        {loading && <Text style={styles.loadingText}>Memproses Gambar (KSABAR)...</Text>}
+        {loading && (
+          <Text style={styles.loadingText}>Memproses Gambar (KSABAR)...</Text>
+        )}
         {imageUri && (
           <>
             <TouchableOpacity onPress={handleImagePress}>
@@ -207,7 +208,7 @@ const Animagine = () => {
                 style={styles.downloadButton}
                 onPress={handleDownloadImage}
               >
-                <Text style={styles.buttonText}>Download Gambar</Text>
+                <Text style={styles.buttonText}>Simpan Gambar</Text>
               </TouchableOpacity>
             </View>
           </View>
